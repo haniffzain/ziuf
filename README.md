@@ -6,6 +6,14 @@
   <em>A 2K concept artwork for Ziuf OS — a small, peaceful home in a floating forest world, reflecting simplicity, privacy, independence and steady growth.</em>
 </p>
 
+<p align="center">
+  <a href="ROADMAP.md"><img src="assets/buttons/roadmap.svg" alt="Roadmap" /></a>
+  <a href="HISTORY.md"><img src="assets/buttons/history.svg" alt="History" /></a>
+  <a href="#package-management"><img src="assets/buttons/zpm.svg" alt="ZPM" /></a>
+  <a href="#privacy-position"><img src="assets/buttons/privacy.svg" alt="Zero telemetry" /></a>
+  <a href="https://buymeacoffee.com/ziuf"><img src="assets/buttons/support.svg" alt="Support Ziuf" /></a>
+</p>
+
 # Ziuf OS
 
 **A small name for a long journey.**
