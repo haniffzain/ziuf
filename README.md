@@ -1,1 +1,249 @@
-# ziuf
+# Ziuf OS
+
+**A small name for a long journey.**
+
+Ziuf OS is an independent Linux operating-system project focused on privacy, user ownership, modular design and a careful, evidence-driven engineering process.
+
+Ziuf is not intended to be a cosmetic rebrand of an existing Linux distribution. The project is building its own controlled Linux base, package path, system architecture and desktop experience while continuing to use mature Linux standards where they make sense.
+
+> **Project status:** active development. The project is transitioning from the former **ZORX OS** name to **Ziuf OS**. The name has changed; the engineering history has not been reset.
+
+---
+
+## Why Ziuf exists
+
+Ziuf began with a simple question:
+
+> Can a Linux operating system be private by default, pleasant to use, understandable to its owner, and still be built with enough discipline that every important layer can be traced and verified?
+
+The project is being shaped around a few quiet principles:
+
+- **No automatic telemetry.** The operating system should not silently report user activity.
+- **Local-first diagnostics.** Crash information stays on the device unless the user chooses to share it.
+- **User ownership.** The machine belongs to the person using it.
+- **Independent foundation.** Ziuf is being built from a controlled source-based Linux foundation rather than simply reskinning another distribution.
+- **Familiar Linux.** Standard Linux commands, filesystem conventions and mature upstream technologies remain valuable.
+- **Wayland-first desktop.** The graphical environment is being designed for modern Wayland systems.
+- **Modular architecture.** Lower layers should not secretly depend on higher layers.
+- **Evidence before claims.** A milestone is not considered complete merely because code exists; the required verification must pass.
+
+Ziuf is meant to grow quietly: fewer claims, more proof.
+
+---
+
+## The journey
+
+The project did not begin with the name Ziuf.
+
+It started as an experiment around **Hubuntu**, then evolved into **ZORX OS** as the goal became larger: build an independent operating-system foundation instead of remaining a customization layer on top of another distribution.
+
+Under the ZORX name, the project established its architecture, bootstrap toolchain, package architecture, minimal root filesystem, boot path, signed repository/update foundation and the early network/security stack.
+
+In October 2026, the project adopted the name **Ziuf**.
+
+The rename is a continuation, not a restart.
+
+```text
+Hubuntu
+   ↓
+ZORX OS
+   ↓
+Ziuf OS
+```
+
+The engineering work completed under earlier names remains part of Ziuf's history.
+
+See [HISTORY.md](HISTORY.md) for the longer story.
+
+---
+
+## Where the engineering stands
+
+Ziuf inherits the milestone history developed under `zorx-core`.
+
+| Milestone | Purpose | Current project record |
+|---|---|---|
+| M0 | Architecture lock | ✅ Complete |
+| M1 | Bootstrap toolchain | ✅ Reference gate passed |
+| M1.5 | Package architecture bootstrap | ✅ Complete and integrated |
+| M2 | Minimal root filesystem | ✅ Gate passed in development branch |
+| M3 | Bootable console / core system services | ✅ Gates passed in development branch |
+| M4 | Signed repository, update and recovery foundation | ✅ Gate passed in development branch |
+| M5.0–M5.4 | Network and security foundation through nftables firewall | ✅ Locked checkpoints in development branch |
+| M5.5 | Privilege / PolicyKit foundation | 🔧 Active next checkpoint |
+| M6+ | Hardware, graphics, desktop integration and later system layers | ⏳ Ahead |
+
+The current M2–M5.4 work remains under review in the development branch while its evidence is completed. Ziuf does not claim later gates before they have passed.
+
+The milestone plan continues toward graphics/input/audio, the graphical session, native platform services, user experience, installer/ISO work and an eventual developer alpha.
+
+See [ROADMAP.md](ROADMAP.md).
+
+---
+
+## Package management
+
+The project already has an established package-management identity:
+
+### ZPM — Ziuf Package Manager
+
+ZPM is the user-facing package-management path built around the project's controlled package architecture.
+
+```bash
+zpm install firefox
+zpm update
+zpm upgrade
+zpm remove firefox
+```
+
+The `zpm` name is retained through the transition to Ziuf.
+
+---
+
+## Desktop direction
+
+Ziuf is also developing its own modular desktop environment.
+
+The desktop work is:
+
+- **Wayland-first**
+- built from restartable, independent components
+- designed so the compositor can be replaced behind an abstraction
+- using Hyprland as a development/reference backend rather than as Ziuf's permanent UI identity
+- built around human-readable configuration, recovery from malformed settings, keyboard/pointer support, accessibility and privacy defaults
+
+Desktop prototype work has already progressed through session/shell preparation, a shared design system, ZBar foundations and a real Qt Quick graphical preview under WSLg.
+
+Planned Ziuf desktop components include:
+
+```text
+Ziuf Desktop
+├── session
+├── shell
+├── ZBar
+├── launcher
+├── settings
+├── notifications
+├── quick settings
+├── overview
+├── lock screen
+└── Ziuf Files
+```
+
+A future Ziuf compositor remains a separate long-term goal. The desktop architecture is intentionally not designed to depend permanently on one compositor implementation.
+
+---
+
+## System architecture
+
+The base operating system follows a dependency-ordered model:
+
+```text
+01  Toolchain / bootstrap
+02  Base filesystem + libc
+03  Kernel + boot
+04  Init, devices + core services
+05  Package management
+06  Networking + security
+07  Graphics, audio + input
+08  Wayland desktop/session
+09  Native Ziuf platform services
+10  User experience + applications
+11  Installer, image + release infrastructure
+```
+
+A higher layer must not quietly become a hidden dependency of a lower one.
+
+This rule is deliberately boring — and that is useful. It keeps the system understandable as it grows.
+
+---
+
+## Privacy position
+
+Ziuf's current privacy direction is simple:
+
+**The operating system should not need to watch its user in order to work.**
+
+There is no planned mandatory telemetry pipeline. Diagnostic and crash information is intended to remain local by default. Feedback or diagnostic sharing should happen only through an explicit action by the user.
+
+Privacy is treated as architecture, not a checkbox added near release day.
+
+---
+
+## What Ziuf is not yet
+
+Ziuf is **not yet a finished daily-driver distribution**.
+
+There is no stable public release to install today, and later milestone claims will only be made when their validation gates pass.
+
+This repository exists to introduce the project, preserve its story and eventually become the public entry point to the Ziuf ecosystem.
+
+Engineering repositories and component repositories will be linked here gradually as the transition from the ZORX name is completed safely.
+
+---
+
+## Project family
+
+The intended long-term structure is:
+
+```text
+Ziuf OS
+├── Ziuf Core
+├── ZPM
+│   └── Ziuf Package Manager
+├── Ziuf Desktop
+├── Ziuf Shell
+├── Ziuf Settings
+├── Ziuf Files
+├── Ziuf Installer
+└── Ziuf SDK
+```
+
+Names and repository boundaries may evolve while the architecture is still being validated.
+
+---
+
+## A note on the name
+
+**Ziuf** is intentionally short and understated.
+
+It is not meant to sound like a claim of superiority. The project would rather let reliability, privacy and the experience of using the system give meaning to the name over time.
+
+Internally, the four letters also fit four project values:
+
+- **Z** — Zero telemetry
+- **I** — Independence
+- **U** — User first
+- **F** — Freedom
+
+This is a project mnemonic, not a requirement that the name be treated as an acronym.
+
+---
+
+## Development philosophy
+
+Ziuf follows one rule repeatedly:
+
+> **Build → verify → record → move forward.**
+
+Failures are kept as engineering evidence rather than hidden from the project's history. Several earlier bootstrap failures led directly to stronger source verification, deterministic retry handling, isolation checks and more reliable build gates.
+
+That history matters because Ziuf is being built to be understood, not merely assembled.
+
+---
+
+## Current transition note
+
+Older source code, branches, documentation and package names may still contain the **ZORX** identity while the transition is planned carefully.
+
+They should not be mass-renamed until compatibility, package identity, repository history and test coverage are accounted for.
+
+The public brand is moving to **Ziuf OS**; the technical migration will follow in controlled steps.
+
+---
+
+## Project creator
+
+**M. Haniff** — Project Creator / Lead Developer
+
+Ziuf is an independent personal Linux project under active development.
