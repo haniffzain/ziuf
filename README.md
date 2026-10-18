@@ -242,6 +242,16 @@ The public brand is moving to **Ziuf OS**; the technical migration will follow i
 
 ---
 
+## Support Ziuf
+
+Ziuf is an independent project and is being developed step by step. If you would like to help with development costs, testing resources, domains, infrastructure and future release work, you can support the project here:
+
+☕ **[Buy Me a Coffee — Ziuf](https://buymeacoffee.com/ziuf)**
+
+Support is entirely optional. Ziuf's goal is to remain useful, privacy-respecting and accessible regardless of whether a user contributes financially.
+
+---
+
 ## Project creator
 
 **M. Haniff** — Project Creator / Lead Developer
