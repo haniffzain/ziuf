@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="assets/branding/ziuf-hero-2k.webp" alt="Ziuf OS concept artwork — a small floating forest home" width="720" />
+</p>
+
+<p align="center">
+  <em>A 2K concept artwork for Ziuf OS — a small, peaceful home in a floating forest world, reflecting simplicity, privacy, independence and steady growth.</em>
+</p>
+
 # Ziuf OS
 
 **A small name for a long journey.**
