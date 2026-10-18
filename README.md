@@ -6,7 +6,7 @@ Ziuf OS is an independent Linux operating-system project focused on privacy, use
 
 Ziuf is not intended to be a cosmetic rebrand of an existing Linux distribution. The project is building its own controlled Linux base, package path, system architecture and desktop experience while continuing to use mature Linux standards where they make sense.
 
-> **Project status:** active development. The project is transitioning from the former **ZORX OS** name to **Ziuf OS**. The name has changed; the engineering history has not been reset.
+> **Project status:** active development. The public identity is transitioning from the former **ZORX OS** name to **Ziuf OS**. The name has changed; the engineering history has not been reset.
 
 ---
 
@@ -31,35 +31,41 @@ Ziuf is meant to grow quietly: fewer claims, more proof.
 
 ---
 
-## The journey
+## The engineering journey
 
-The project did not begin with the name Ziuf.
+Ziuf's public engineering story begins with the construction of its own bootstrap toolchain.
 
-It started as an experiment around **Hubuntu**, then evolved into **ZORX OS** as the goal became larger: build an independent operating-system foundation instead of remaining a customization layer on top of another distribution.
+On **25 September 2026**, the M1 reference gate passed after the project successfully built and verified its controlled Binutils/GCC/glibc toolchain path, temporary userspace tools, target sanity checks and host-contamination audit.
 
-Under the ZORX name, the project established its architecture, bootstrap toolchain, package architecture, minimal root filesystem, boot path, signed repository/update foundation and the early network/security stack.
-
-In October 2026, the project adopted the name **Ziuf**.
-
-The rename is a continuation, not a restart.
+From there the project moved forward one verified layer at a time:
 
 ```text
-Hubuntu
-   ↓
-ZORX OS
-   ↓
-Ziuf OS
+M1      Bootstrap toolchain
+ ↓
+M1.5    Package architecture + ZPM path
+ ↓
+M2      Minimal root filesystem
+ ↓
+M3      Kernel, boot + core services
+ ↓
+M4      Signed repository, updates + recovery
+ ↓
+M5      Networking + security foundation
+ ↓
+M5.5    Privilege / PolicyKit foundation
 ```
 
-The engineering work completed under earlier names remains part of Ziuf's history.
+The project was developed under the **ZORX OS** name during much of this engineering work. In October 2026, the public identity changed to **Ziuf OS**.
 
-See [HISTORY.md](HISTORY.md) for the longer story.
+The rename is a continuation of the same engineering line, not a restart and not a change of technical foundation.
+
+See [HISTORY.md](HISTORY.md) for the longer milestone story.
 
 ---
 
 ## Where the engineering stands
 
-Ziuf inherits the milestone history developed under `zorx-core`.
+Ziuf inherits the milestone history developed in the existing core engineering repositories.
 
 | Milestone | Purpose | Current project record |
 |---|---|---|
