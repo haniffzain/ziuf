@@ -1,196 +1,248 @@
 # Ziuf Project History
 
-Ziuf is a new name, but it is not a new beginning.
+Ziuf is a new public name, but it continues an engineering line that was already well underway.
 
-This project has moved through several identities as its purpose became clearer.
-
-## 1. Hubuntu — the experimental beginning
-
-The earliest stage was **Hubuntu**.
-
-At that point, the project was still exploring what a useful personal Linux system could become: practical, private, attractive and suitable for everyday work.
-
-Hubuntu was important because it exposed the limits of simply customizing an existing distribution. As the ideas grew, the project needed stronger control over the base system, package flow, security model and desktop architecture.
-
-That led to the next stage.
+This history intentionally begins with the project's verified system-engineering milestones rather than with earlier naming experiments. The focus here is the operating system that was actually built, tested and advanced gate by gate.
 
 ---
 
-## 2. ZORX OS — from customization to system engineering
+## M1 — Bootstrap toolchain
 
-The project evolved into **ZORX OS** with a more ambitious goal:
-
-> Build an independent Linux operating-system foundation with controlled dependencies, verifiable source inputs, a native package path and its own desktop direction.
-
-Under the ZORX name, the project stopped treating the operating system as only a visual layer.
-
-The work moved downward into the system itself:
-
-- architecture and dependency boundaries
-- authenticated source manifests
-- bootstrap toolchain
-- libc and base userspace
-- package architecture
-- signed repositories
-- update/recovery behavior
-- kernel and boot path
-- system services
-- networking and firewall foundations
-- Wayland-first desktop architecture
-
-### M0 — Architecture lock
-
-M0 established the rules that later work would follow:
-
-- independent Linux distribution direction
-- strict dependency layering
-- controlled rolling-release model
-- glibc as the primary C library
-- systemd as the init/service layer
-- libalpm/pacman backend with the project's `zpm` frontend
-- authenticated source locks and strong checksums
-- native project components rather than GNOME Shell extensions
-
-The important result of M0 was not a visible desktop. It was a boundary: later layers should not silently redefine the foundations below them.
-
-### M1 — Bootstrap toolchain
+The first major engineering story begins with the bootstrap toolchain.
 
 On **25 September 2026**, the M1 reference gate passed.
 
-The canonical run completed the locked source-verification gates and the full bootstrap sequence through:
+The successful reference path completed:
 
-- Binutils
-- GCC
+- authenticated and locked source verification
+- Binutils bootstrap
+- GCC bootstrap
 - Linux API headers
 - glibc
 - temporary userspace tools
-- final target toolchain sanity
+- final target C/C++ sanity checks
+- privileged chroot validation
 - host-contamination audit
 
-M1 was reached only after several failed attempts. Truncated downloads, WSL infrastructure interruptions and a late sudo/chroot lifecycle failure were preserved as engineering evidence and used to harden the build process.
+M1 was not reached in a single perfect attempt. Earlier runs exposed truncated downloads, WSL infrastructure interruptions and a sudo/chroot credential-lifecycle problem.
 
-That history shaped one of Ziuf's lasting rules:
+Those failures were preserved as engineering evidence and used to harden the process.
+
+That established a principle that still guides Ziuf:
 
 > A failed build is not wasted if it improves the next verified path.
 
-### M1.5 — Package architecture bootstrap
+---
+
+## M1.5 — Package architecture bootstrap
 
 M1.5 was integrated into the main engineering line on **11 October 2026**.
 
-This phase established the controlled binary-package path around pacman/libalpm and ZPM, including authenticated dependencies, isolated network-denied builds, reproducibility checks, signing/repository foundations and transaction/recovery validation.
+This phase established the controlled package path around pacman/libalpm and the project's `zpm` frontend.
 
-The package work included verified builds across foundational libraries and tooling rather than relying blindly on host packages.
+The work included:
 
-### M2 — Minimal root filesystem
+- authenticated upstream source trust
+- pinned dependency metadata
+- isolated network-denied build execution
+- reproducibility checks
+- package metadata validation
+- signing and repository foundations
+- transaction and recovery validation
+- the initial ZPM interface path
 
-The next development line moved into a Ziuf-owned base userspace: filesystem hierarchy, core utilities, shell, accounts, permissions, system identity and the emerging package path.
+The important change was architectural: the project was no longer only capable of building a toolchain. It now had a controlled path toward building, packaging, signing and installing its own system components.
+
+---
+
+## M2 — Minimal root filesystem
+
+M2 moved the project into a self-contained base userspace.
+
+The target was to enter a project-owned chroot and operate with its own base system rather than depending on the host environment for normal runtime behavior.
 
 The recorded M2 gate passed in the development branch.
 
-### M3 — Bootable console and core services
+This stage covered the foundations for:
 
-M3 moved the system from a filesystem into a bootable operating-system environment.
+- filesystem hierarchy
+- core utilities
+- shell environment
+- accounts and permissions
+- system identity
+- base package installation through the emerging package path
 
-The recorded development gates covered the kernel/boot path and the system-services layer, including the foundations required for a usable console system.
+---
 
-### M4 — Repository, updates and recovery
+## M3 — Kernel, boot and core services
 
-M4 established the next trust boundary: signed package repositories, update transactions and recovery behavior.
+M3 transformed the root filesystem into a bootable operating-system environment.
+
+The recorded development gates covered:
+
+- Linux kernel integration
+- initramfs
+- boot path
+- systemd
+- D-Bus and udev foundations
+- journald and core system services
+
+The milestone demonstrated that the project could move beyond a chroot and into a bootable console system.
+
+---
+
+## M4 — Signed repository, updates and recovery
+
+M4 established another trust boundary: package delivery and recovery.
 
 The recorded Gate 5 passed in the development branch.
 
-### M5 — Network and security foundation
+The work covered the foundations for:
 
-Development then progressed through M5.0–M5.4.
+- signed package repositories
+- repository metadata
+- dependency validation
+- update transactions
+- recovery behavior
+- rollback and downgrade strategy for critical package families
+- the standard `zpm` command path
 
-The latest locked checkpoint in this line is **M5.4**, covering the nftables firewall foundation with authenticated builds, reproducibility, package/repository verification, isolated packet tests, fail-closed policy behavior and repeated integrated KVM runs.
-
-The next active checkpoint is **M5.5 — privilege / PolicyKit foundation**.
-
-Later integration gates are intentionally not claimed yet.
-
----
-
-## 3. The desktop project
-
-In parallel with the base operating system, a separate desktop-environment project was created.
-
-Its goal is not to copy an existing desktop shell, but to create a modular Wayland-first environment with replaceable compositor backends.
-
-The desktop direction includes:
-
-- session supervision
-- shell surfaces
-- ZBar
-- floating launcher/menu
-- settings
-- notifications
-- quick settings
-- overview
-- lock screen
-- standalone file manager
-- accessibility and reduced-motion support
-
-Hyprland is used as a development/reference backend, not as the permanent identity of the desktop architecture.
-
-Desktop work has already produced session/shell preparation, a shared design system, ZBar foundations and a real Qt Quick graphical preview under WSLg.
-
-A dedicated Ziuf compositor remains a future project rather than a dependency of the current desktop work.
+The goal was not merely to install packages, but to understand how the system should recover when an update goes wrong.
 
 ---
 
-## 4. Why the name changed again
+## M5 — Network and security foundation
 
-By October 2026, the engineering project had become clearer than its name.
+Development then progressed through **M5.0–M5.4**.
 
-The project wanted an identity that felt smaller, calmer and less performative.
+The latest locked checkpoint in this line is **M5.4**, covering the nftables firewall foundation.
 
-The name **Ziuf** was chosen as a short, understated public identity.
+The recorded work includes:
 
-The change does not erase ZORX.
+- authenticated source builds
+- reproducible package output
+- package and repository-role verification
+- dependency closure checks
+- isolated IPv4/IPv6 packet tests
+- permitted established replies
+- DHCP behavior
+- denied unlisted egress
+- denied unsolicited input and forwarding
+- malformed-policy preservation
+- fail-closed behavior
+- deny-all recovery
+- repeated integrated KVM runs across failure and recovery scenarios
 
-ZORX remains part of the project's engineering history, commit history, milestone evidence and older technical namespaces.
+The current next checkpoint is:
 
-The migration therefore follows this principle:
+### M5.5 — Privilege / PolicyKit foundation
 
-> Rename the identity first. Migrate technical names only when compatibility and evidence are understood.
+Later integration gates are intentionally not claimed before their validation evidence exists.
+
+---
+
+## Desktop engineering in parallel
+
+While the base operating system was moving through its system milestones, a separate desktop-environment project was also developed.
+
+Its direction is modular and **Wayland-first**.
+
+The architecture is designed so that the compositor can be replaced behind an abstraction instead of becoming the identity of the entire desktop.
+
+Hyprland is used as a development/reference backend, not as the permanent public UI architecture.
+
+Desktop work has progressed through:
+
+- session supervision foundations
+- shell preparation
+- compositor abstraction work
+- shared design-system contracts
+- dark/light theme tokens
+- centered floating launcher direction
+- ZBar foundations
+- Qt Quick graphical preview under WSLg
+
+Planned desktop components include:
 
 ```text
-Hubuntu
-   ↓
-ZORX OS
-   ↓
-Ziuf OS
+Ziuf Desktop
+├── session
+├── shell
+├── ZBar
+├── launcher
+├── settings
+├── notifications
+├── quick settings
+├── overview
+├── lock screen
+└── Ziuf Files
 ```
+
+A dedicated Ziuf compositor remains a future project rather than a requirement for the current desktop work.
 
 ---
 
-## 5. What continues unchanged
+## From ZORX OS to Ziuf OS
 
-The name changed, but the central ideas did not:
+Much of the engineering above was originally developed under the **ZORX OS** project name.
+
+By October 2026, the engineering direction was clearer than the public identity, and the project adopted the name **Ziuf**.
+
+The rename does not reset the system's history.
+
+The same milestone evidence, package architecture, source-verification work, boot path, security work and desktop development continue forward under the Ziuf identity.
+
+The migration follows a simple rule:
+
+> Rename the public identity first. Migrate technical names only when compatibility and evidence are understood.
+
+Older repositories, branches, package identifiers and source namespaces may therefore still contain the ZORX name during the transition.
+
+---
+
+## What remains unchanged
+
+The name changed, but the project's central ideas remain:
 
 - no automatic telemetry
 - local-first diagnostics
+- user ownership
 - privacy by architecture
 - controlled source inputs
-- reproducible and authenticated build paths where practical
-- strict layer boundaries
+- authenticated and reproducible build paths where practical
+- strict dependency-layer boundaries
 - modular system services
 - Wayland-first desktop direction
 - familiar Linux conventions
 - ZPM as the package-management identity
 - evidence before milestone claims
 
-Ziuf is the continuation of that work.
-
 ---
 
-## 6. The story is still being written
+## The story now
 
-Ziuf is not presented as finished.
+Ziuf is still under active development.
 
-There is no stable public release yet. Several engineering repositories still carry the ZORX name while the transition is planned carefully.
+There is no stable public release yet.
 
-This repository exists so that the public identity can have a clear home while the technical system continues to mature beneath it.
+The project is currently moving forward from the M5.4 network/security checkpoint toward M5.5 and later hardware, graphics, desktop, installer and release milestones.
 
-The project is moving forward one gate at a time.
+The public story therefore begins where the engineering became measurable:
+
+```text
+M1
+ ↓
+M1.5
+ ↓
+M2
+ ↓
+M3
+ ↓
+M4
+ ↓
+M5.0–M5.4
+ ↓
+M5.5 and beyond
+```
+
+Ziuf continues one verified gate at a time.
