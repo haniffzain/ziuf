@@ -10,6 +10,7 @@
   <a href="ROADMAP.md"><img src="assets/buttons/roadmap.svg" alt="Roadmap" /></a>
   <a href="HISTORY.md"><img src="assets/buttons/history.svg" alt="History" /></a>
   <a href="#package-management"><img src="assets/buttons/zpm.svg" alt="ZPM" /></a>
+  <a href="#native-ziuf-platform-services"><img src="assets/buttons/services.svg" alt="Platform services" /></a>
   <a href="#privacy-position"><img src="assets/buttons/privacy.svg" alt="Zero telemetry" /></a>
   <a href="https://buymeacoffee.com/ziuf"><img src="assets/buttons/support.svg" alt="Support Ziuf" /></a>
 </p>
@@ -180,13 +181,47 @@ This rule is deliberately boring — and that is useful. It keeps the system und
 
 ---
 
+## Native Ziuf platform services
+
+Ziuf is intended to include native system services that support privacy, security and day-to-day use without turning those features into hidden background data collection.
+
+### Sentinel
+
+**Sentinel** is being developed as a local-first network-behaviour and security component. Its engineering path is deliberately progressive:
+
+```text
+observe → analyse → defend
+```
+
+The current direction is to understand local network behaviour first, make decisions from evidence, and add defensive responses only when those behaviours can be implemented and verified safely. Ziuf does not claim a fully autonomous defensive system before those gates exist and pass.
+
+### Tor Route
+
+**Tor Route** is planned as an optional, user-controlled privacy-routing capability for selected applications or traffic.
+
+It is not intended to mean that every Ziuf connection is silently forced through Tor. The user should remain in control of when privacy routing is enabled, what uses it, and when normal networking is preferred.
+
+Other native-service ideas, including components such as **Downbar** and a future **Droid Wrapper**, remain part of the wider platform direction and will be documented as their interfaces and validation paths become mature enough to claim publicly.
+
+---
+
 ## Privacy position
 
-Ziuf's current privacy direction is simple:
+Ziuf's privacy direction is simple:
 
 **The operating system should not need to watch its user in order to work.**
 
-There is no planned mandatory telemetry pipeline. Diagnostic and crash information is intended to remain local by default. Feedback or diagnostic sharing should happen only through an explicit action by the user.
+### Zero telemetry, local-first logs
+
+Ziuf is designed so that temporary session data does not quietly accumulate after it is no longer needed. Where practical, ephemeral session data is intended to be cleared automatically when the session ends.
+
+Technical diagnostic information that is genuinely useful for understanding system failures — such as crash, boot, service, kernel or hardware faults — may remain locally available for troubleshooting.
+
+Those technical logs are intended to stay on the user's device. Ziuf does not plan to upload them automatically, report them silently, or treat them as telemetry. Sharing diagnostic information should happen only through an explicit action by the user.
+
+> **Privacy should include forgetting what no longer needs to be remembered.**
+
+The automatic session-cleanup model is still part of active engineering work, so Ziuf describes it as a design target until its implementation and validation gates have passed.
 
 Privacy is treated as architecture, not a checkbox added near release day.
 
@@ -247,6 +282,8 @@ This is a project mnemonic, not a requirement that the name be treated as an acr
 Ziuf follows one rule repeatedly:
 
 > **Build → verify → record → move forward.**
+
+Ziuf does not need to exaggerate what it is. The project should show what has been built, what has passed, and what still remains ahead.
 
 Failures are kept as engineering evidence rather than hidden from the project's history. Several earlier bootstrap failures led directly to stronger source verification, deterministic retry handling, isolation checks and more reliable build gates.
 
