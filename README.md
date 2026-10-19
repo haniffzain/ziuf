@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="assets/branding/ziuf-hero-2k.webp" alt="Ziuf OS concept artwork — a small floating forest home" width="720" />
+  <img src="assets/branding/Ziuf%20OS_%20Pulau%20Terapung%20Fantasi.png" alt="Ziuf OS — peaceful floating-island concept artwork" width="900" />
 </p>
 
 <p align="center">
-  <em>A 2K concept artwork for Ziuf OS — a small, peaceful home in a floating forest world, reflecting simplicity, privacy, independence and steady growth.</em>
+  <em>A peaceful corner of Ziuf — simple, private, independent, and built one careful step at a time.</em>
 </p>
 
 <p align="center">
