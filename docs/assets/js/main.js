@@ -6,6 +6,7 @@
   const themeToggle = document.querySelector('.theme-toggle');
   const themeIcon = document.querySelector('.theme-icon');
   const year = document.querySelector('#year');
+  const scrollCat = document.querySelector('.scroll-cat');
 
   const storedTheme = localStorage.getItem('ziuf-theme');
   const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -39,9 +40,25 @@
 
   nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
 
-  const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 18);
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
+  let lastScrollY = window.scrollY;
+  let catIdleTimer;
+
+  const updateOnScroll = () => {
+    const currentY = window.scrollY;
+    header?.classList.toggle('scrolled', currentY > 18);
+
+    if (scrollCat && Math.abs(currentY - lastScrollY) > 1) {
+      scrollCat.dataset.direction = currentY > lastScrollY ? 'down' : 'up';
+      scrollCat.classList.add('is-moving');
+      window.clearTimeout(catIdleTimer);
+      catIdleTimer = window.setTimeout(() => scrollCat.classList.remove('is-moving'), 170);
+    }
+
+    lastScrollY = currentY;
+  };
+
+  updateOnScroll();
+  window.addEventListener('scroll', updateOnScroll, { passive: true });
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeNav();
