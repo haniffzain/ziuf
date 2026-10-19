@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1010" />
+  <meta name="theme-color" content="#f4f2ec" />
   <meta name="description" content="Ziuf OS is an independent Linux operating-system project focused on privacy, user ownership, modular design and evidence-driven engineering." />
-  <meta property="og:title" content="Ziuf OS — Privacy. Independence. User first." />
+  <meta property="og:title" content="Ziuf OS — Built quietly. Verified carefully." />
   <meta property="og:description" content="An independent Linux operating-system project built one verified layer at a time." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://raw.githubusercontent.com/haniffzain/ziuf/main/assets/branding/Ziuf%20OS_%20Pulau%20Terapung%20Fantasi.png" />
-  <title>Ziuf OS — Built one verified layer at a time</title>
+  <title>Ziuf OS — Built quietly. Verified carefully.</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -18,243 +18,173 @@
 
   <header class="site-header" id="top">
     <div class="shell nav-wrap">
-      <a class="brand" href="#top" aria-label="Ziuf OS home">
-        <span class="brand-mark" aria-hidden="true">Z</span>
-        <span>Ziuf</span>
-      </a>
+      <a class="wordmark" href="#top" aria-label="Ziuf OS home">Ziuf<span>.</span></a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#why">Why Ziuf</a>
+        <a href="#principles">Principles</a>
         <a href="#journey">Journey</a>
-        <a href="#services">Services</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#desktop">Desktop</a>
-        <a class="nav-pill" href="https://github.com/haniffzain/ziuf">GitHub</a>
-        <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
-          <span class="theme-icon" aria-hidden="true">☼</span>
-        </button>
+        <a href="#platform">Platform</a>
+        <a href="#status">Status</a>
+        <a href="https://github.com/haniffzain/ziuf">GitHub ↗</a>
+        <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme"><span class="theme-icon" aria-hidden="true">☾</span></button>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art" role="img" aria-label="Ziuf OS floating-island concept artwork"></div>
-      <div class="hero-shade"></div>
-      <div class="shell hero-content">
-        <p class="eyebrow">Independent Linux operating system</p>
-        <h1 id="hero-title">A small name for<br /><span>a long journey.</span></h1>
-        <p class="hero-copy">Private by direction. Independent by design. Built carefully, one verified layer at a time.</p>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-meta">
+        <span>Independent Linux OS</span>
+        <span>Active development · 2026</span>
+      </div>
+
+      <h1 id="hero-title">Built quietly.<br /><em>Verified carefully.</em></h1>
+
+      <div class="hero-bottom">
+        <p>Ziuf is an independent Linux operating-system project shaped around privacy, user ownership and engineering evidence.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#journey">Explore the journey</a>
-          <a class="button button-ghost" href="https://github.com/haniffzain/ziuf">View on GitHub ↗</a>
-        </div>
-        <div class="hero-status" aria-label="Project status">
-          <span class="status-dot"></span>
-          <span>Active development · M5.5 is the next core checkpoint</span>
+          <a class="arrow-link" href="#journey">Explore the journey <span>↓</span></a>
+          <a class="arrow-link muted-link" href="https://github.com/haniffzain/ziuf">View source <span>↗</span></a>
         </div>
       </div>
     </section>
 
-    <section class="statement section-pad" id="why">
-      <div class="shell narrow">
-        <p class="section-kicker">Why Ziuf exists</p>
-        <h2>The operating system should work for its user — not watch them.</h2>
-        <p class="lead">Ziuf is an independent Linux project focused on privacy, user ownership, modular architecture and engineering claims that match the evidence.</p>
+    <figure class="hero-image shell-wide">
+      <img src="../assets/branding/Ziuf%20OS_%20Pulau%20Terapung%20Fantasi.png" alt="Ziuf OS floating-island concept artwork" />
+      <figcaption><span>Ziuf / visual study 01</span><span>A small name for a long journey.</span></figcaption>
+    </figure>
+
+    <section class="manifesto shell section" id="principles">
+      <div class="section-index">01 / Principles</div>
+      <div class="manifesto-body">
+        <p class="big-statement">The operating system should work for its user — <em>not watch them.</em></p>
+        <p class="intro-copy">Ziuf is being built from a controlled source-based Linux foundation rather than as a cosmetic reskin. The project keeps familiar Linux standards where they make sense, while owning its integration, package path and system direction.</p>
       </div>
-      <div class="shell principles-grid">
-        <article class="principle-card">
-          <span class="card-index">01</span>
-          <h3>Zero telemetry</h3>
-          <p>No automatic reporting of user activity. Diagnostic information is intended to remain local unless the user explicitly chooses to share it.</p>
+
+      <div class="principle-list">
+        <article>
+          <span>01</span>
+          <h2>Zero telemetry</h2>
+          <p>No automatic reporting of user activity. Useful diagnostics are intended to remain local unless the user explicitly chooses to share them.</p>
         </article>
-        <article class="principle-card">
-          <span class="card-index">02</span>
-          <h3>Independent foundation</h3>
-          <p>A controlled source-based Linux foundation, package path and system architecture — not a cosmetic reskin of another distribution.</p>
+        <article>
+          <span>02</span>
+          <h2>Independent foundation</h2>
+          <p>A controlled Linux base, package architecture and system direction — while respecting and acknowledging the upstream projects Ziuf builds upon.</p>
         </article>
-        <article class="principle-card">
-          <span class="card-index">03</span>
-          <h3>User first</h3>
-          <p>The machine belongs to the person using it. Ziuf aims for understandable controls, familiar Linux conventions and deliberate defaults.</p>
+        <article>
+          <span>03</span>
+          <h2>User first</h2>
+          <p>The machine belongs to the person using it. Controls should be understandable, deliberate and recoverable.</p>
         </article>
-        <article class="principle-card">
-          <span class="card-index">04</span>
-          <h3>Evidence before claims</h3>
-          <p>A milestone is not complete because code exists. Required validation must pass before the project claims the gate.</p>
+        <article>
+          <span>04</span>
+          <h2>Evidence before claims</h2>
+          <p>Code alone does not complete a milestone. The relevant validation gate must pass before Ziuf claims it.</p>
         </article>
       </div>
     </section>
 
-    <section class="journey section-pad" id="journey">
-      <div class="shell section-heading">
-        <div>
-          <p class="section-kicker">Engineering journey</p>
-          <h2>Build → verify → record → move forward.</h2>
-        </div>
-        <a class="text-link" href="https://github.com/haniffzain/ziuf/blob/main/ROADMAP.md">Full roadmap ↗</a>
-      </div>
-
-      <div class="shell milestone-track" aria-label="Ziuf core milestones">
-        <article class="milestone done">
-          <span class="milestone-state">Complete</span>
-          <strong>M1</strong>
-          <h3>Bootstrap toolchain</h3>
-          <p>Controlled compiler and toolchain foundation.</p>
-        </article>
-        <article class="milestone done">
-          <span class="milestone-state">Complete</span>
-          <strong>M1.5</strong>
-          <h3>Package architecture</h3>
-          <p>Package path and ZPM foundations.</p>
-        </article>
-        <article class="milestone passed">
-          <span class="milestone-state">Gate passed</span>
-          <strong>M2–M4</strong>
-          <h3>Base to recovery</h3>
-          <p>Root filesystem, boot, signed repository and recovery foundations.</p>
-        </article>
-        <article class="milestone passed">
-          <span class="milestone-state">Locked in dev</span>
-          <strong>M5.0–M5.4</strong>
-          <h3>Network + security</h3>
-          <p>Networking foundation through nftables firewall.</p>
-        </article>
-        <article class="milestone active">
-          <span class="milestone-state">Next checkpoint</span>
-          <strong>M5.5</strong>
-          <h3>Privilege foundation</h3>
-          <p>Privilege and PolicyKit engineering checkpoint.</p>
-        </article>
-        <article class="milestone future">
-          <span class="milestone-state">Ahead</span>
-          <strong>M6+</strong>
-          <h3>Hardware → Alpha</h3>
-          <p>Graphics, desktop integration, installer and developer alpha.</p>
-        </article>
-      </div>
-
-      <div class="shell journey-note">
-        <p>Ziuf was developed under the <strong>ZORX OS</strong> name during much of this engineering work. The public identity changed in October 2026; the engineering history did not restart.</p>
-        <a class="text-link" href="https://github.com/haniffzain/ziuf/blob/main/HISTORY.md">Read the project history ↗</a>
-      </div>
-    </section>
-
-    <section class="zpm-band section-pad">
-      <div class="shell zpm-layout">
-        <div>
-          <p class="section-kicker">Package management</p>
-          <h2>ZPM</h2>
-          <p class="lead">Ziuf Package Manager is the user-facing path built around the project's controlled package architecture.</p>
-        </div>
-        <div class="terminal" aria-label="ZPM command examples">
-          <div class="terminal-bar"><i></i><i></i><i></i><span>ziuf — terminal</span></div>
-          <pre><code><span>$</span> zpm install firefox
-<span>$</span> zpm update
-<span>$</span> zpm upgrade
-<span>$</span> zpm remove firefox</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="services section-pad" id="services">
-      <div class="shell section-heading">
-        <div>
-          <p class="section-kicker">Native platform direction</p>
-          <h2>Useful services. Quiet by default.</h2>
-        </div>
-      </div>
-      <div class="shell service-grid">
-        <article class="service-card feature">
-          <span class="service-symbol" aria-hidden="true">◉</span>
-          <div>
-            <p class="mini-label">Local-first security</p>
-            <h3>Sentinel</h3>
-            <p>A network-behaviour and security component progressing deliberately from observation to analysis and, only when safely verified, defensive response.</p>
-            <div class="flow"><span>observe</span><b>→</b><span>analyse</span><b>→</b><span>defend</span></div>
-          </div>
-        </article>
-        <article class="service-card">
-          <span class="service-symbol" aria-hidden="true">◎</span>
-          <p class="mini-label">Optional privacy routing</p>
-          <h3>Tor Route</h3>
-          <p>Planned user-controlled privacy routing for selected applications or traffic — not a silent system-wide switch.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-symbol" aria-hidden="true">⌁</span>
-          <p class="mini-label">Future platform ideas</p>
-          <h3>More, carefully</h3>
-          <p>Downbar, Droid Wrapper and other native ideas will be documented when their interfaces and validation paths are mature enough to claim publicly.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="privacy section-pad" id="privacy">
-      <div class="shell privacy-layout">
-        <div class="privacy-quote">
-          <span class="quote-mark" aria-hidden="true">“</span>
-          <blockquote>Privacy should include forgetting what no longer needs to be remembered.</blockquote>
-        </div>
-        <div class="privacy-copy">
-          <p class="section-kicker">Privacy position</p>
-          <h2>Local-first by architecture.</h2>
-          <p>Temporary session data is intended not to quietly accumulate after it is no longer needed. Useful crash, boot, service, kernel or hardware diagnostics may remain locally available for troubleshooting.</p>
-          <p>Ziuf does not plan to upload those logs automatically or treat them as telemetry. Sharing diagnostic information should happen only through an explicit action by the user.</p>
-          <p class="honesty-note"><strong>Engineering note:</strong> automatic session cleanup remains a design target until its implementation and validation gates pass.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="desktop section-pad" id="desktop">
-      <div class="shell desktop-layout">
-        <div>
-          <p class="section-kicker">Ziuf Desktop</p>
-          <h2>Wayland-first.<br />Modular by design.</h2>
-          <p class="lead">The desktop is being built from restartable components with a compositor abstraction, so one backend does not become the permanent identity of the whole environment.</p>
-          <div class="tag-row" aria-label="Desktop principles">
-            <span>Session</span><span>Shell</span><span>ZBar</span><span>Launcher</span><span>Settings</span><span>Ziuf Files</span>
-          </div>
-        </div>
-        <div class="desktop-window" aria-hidden="true">
-          <div class="mock-wallpaper">
-            <div class="mock-bar"><span class="mock-z">Z</span><span>08:58</span></div>
-            <div class="mock-launcher">
-              <div class="mock-search">Search Ziuf…</div>
-              <div class="mock-apps"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="meaning section-pad">
+    <section class="journey section" id="journey">
       <div class="shell">
-        <p class="section-kicker">A small name</p>
-        <h2>Four letters. Four values.</h2>
-        <div class="letters" aria-label="Ziuf project values">
-          <div><strong>Z</strong><span>Zero telemetry</span></div>
-          <div><strong>I</strong><span>Independence</span></div>
-          <div><strong>U</strong><span>User first</span></div>
-          <div><strong>F</strong><span>Freedom</span></div>
+        <div class="section-index">02 / Engineering journey</div>
+        <div class="journey-heading">
+          <h2>Build → verify → record → <em>move forward.</em></h2>
+          <a class="arrow-link" href="https://github.com/haniffzain/ziuf/blob/main/ROADMAP.md">Full roadmap <span>↗</span></a>
         </div>
-        <p class="meaning-note">A project mnemonic, not a claim of superiority. The work should give meaning to the name over time.</p>
+
+        <div class="milestones" aria-label="Ziuf core milestones">
+          <article><div class="m-code">M1</div><div><strong>Bootstrap toolchain</strong><p>Controlled compiler and toolchain foundation.</p></div><span class="state complete">Complete</span></article>
+          <article><div class="m-code">M1.5</div><div><strong>Package architecture</strong><p>Authenticated package path and ZPM foundations.</p></div><span class="state complete">Complete</span></article>
+          <article><div class="m-code">M2–M4</div><div><strong>Base system → recovery</strong><p>Root filesystem, boot, signed repository, updates and recovery foundations.</p></div><span class="state passed">Gate passed</span></article>
+          <article><div class="m-code">M5.0–5.4</div><div><strong>Network + security</strong><p>Networking foundation through the locked nftables firewall checkpoint.</p></div><span class="state passed">Locked in dev</span></article>
+          <article class="current"><div class="m-code">M5.5</div><div><strong>Privilege foundation</strong><p>Privilege and PolicyKit engineering checkpoint.</p></div><span class="state active">Next</span></article>
+          <article><div class="m-code">M6+</div><div><strong>Hardware → desktop → alpha</strong><p>Graphics, input, audio, graphical session, installer and developer alpha.</p></div><span class="state future">Ahead</span></article>
+        </div>
+
+        <div class="history-note">
+          <p>Much of this engineering work began under the <strong>ZORX OS</strong> name. The public identity became <strong>Ziuf OS</strong> in October 2026. The name changed; the engineering history did not restart.</p>
+          <a class="arrow-link" href="https://github.com/haniffzain/ziuf/blob/main/HISTORY.md">Project history <span>↗</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="support section-pad">
-      <div class="shell support-card">
-        <div>
-          <p class="section-kicker">Follow the journey</p>
-          <h2>Ziuf is still being built.</h2>
-          <p>No stable public release is available yet. Follow the engineering record on GitHub, or support the independent project if you would like to help with development costs and future release work.</p>
+    <section class="platform shell section" id="platform">
+      <div class="section-index">03 / Platform</div>
+      <div class="platform-intro">
+        <h2>Small pieces.<br />Clear boundaries.</h2>
+        <p>Ziuf favours modular components and explicit responsibilities. Lower layers should not quietly depend on higher ones.</p>
+      </div>
+
+      <div class="platform-grid">
+        <article>
+          <div class="platform-number">ZPM</div>
+          <h3>Package management</h3>
+          <p>The user-facing package path built around Ziuf's controlled package architecture.</p>
+          <code>zpm install firefox</code>
+        </article>
+        <article>
+          <div class="platform-number">01</div>
+          <h3>Sentinel</h3>
+          <p>Local-first network behaviour and security work progressing deliberately from observation toward verified defensive response.</p>
+          <code>observe → analyse → defend</code>
+        </article>
+        <article>
+          <div class="platform-number">02</div>
+          <h3>Tor Route</h3>
+          <p>Planned optional privacy routing for selected applications or traffic, controlled by the user rather than silently forced system-wide.</p>
+          <code>optional · explicit · controlled</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="privacy-band section">
+      <div class="shell privacy-grid">
+        <div class="section-index">04 / Privacy</div>
+        <blockquote>“Privacy should include forgetting what no longer needs to be remembered.”</blockquote>
+        <div class="privacy-text">
+          <p>Temporary session data is intended not to quietly accumulate after it is no longer needed. Technical crash, boot, service, kernel or hardware diagnostics may remain locally available when they are genuinely useful for troubleshooting.</p>
+          <p>Ziuf does not plan to upload those logs automatically or treat them as telemetry. Automatic session cleanup remains a design target until its implementation and validation gates pass.</p>
         </div>
-        <div class="support-actions">
-          <a class="button button-primary" href="https://github.com/haniffzain/ziuf">GitHub project ↗</a>
-          <a class="button button-ghost" href="https://buymeacoffee.com/ziuf">Support Ziuf ☕</a>
+      </div>
+    </section>
+
+    <section class="desktop shell section">
+      <div class="section-index">05 / Desktop</div>
+      <div class="desktop-grid">
+        <h2>Wayland-first.<br /><em>Modular by design.</em></h2>
+        <div>
+          <p class="intro-copy">Ziuf Desktop is being developed as restartable components behind clear interfaces, with a compositor abstraction so one backend does not become the identity of the entire environment.</p>
+          <div class="component-list">
+            <span>Session</span><span>Shell</span><span>ZBar</span><span>Launcher</span><span>Settings</span><span>Notifications</span><span>Overview</span><span>Lock</span><span>Ziuf Files</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values shell section">
+      <div class="section-index">06 / The name</div>
+      <div class="value-row"><strong>Z</strong><span>Zero telemetry</span></div>
+      <div class="value-row"><strong>I</strong><span>Independence</span></div>
+      <div class="value-row"><strong>U</strong><span>User first</span></div>
+      <div class="value-row"><strong>F</strong><span>Freedom</span></div>
+      <p class="values-note">A project mnemonic, not a claim of superiority. The work should give meaning to the name over time.</p>
+    </section>
+
+    <section class="status section" id="status">
+      <div class="shell status-grid">
+        <div class="section-index">07 / Current status</div>
+        <div>
+          <h2>Still being built.</h2>
+          <p>Ziuf is under active development. There is no stable public release to install today. Follow the engineering record as the project moves toward hardware integration, the graphical system, installer work and an eventual developer alpha.</p>
+          <div class="status-actions">
+            <a class="button-dark" href="https://github.com/haniffzain/ziuf">GitHub project ↗</a>
+            <a class="arrow-link" href="https://buymeacoffee.com/ziuf">Support Ziuf ☕</a>
+          </div>
         </div>
       </div>
     </section>
@@ -262,15 +192,12 @@
 
   <footer class="site-footer">
     <div class="shell footer-grid">
-      <div>
-        <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">Z</span><span>Ziuf</span></a>
-        <p>An independent personal Linux project under active development.</p>
-      </div>
+      <a class="wordmark footer-wordmark" href="#top">Ziuf<span>.</span></a>
+      <p>Independent Linux. Zero automatic telemetry.<br />Built one verified layer at a time.</p>
       <div class="footer-links">
         <a href="https://github.com/haniffzain/ziuf">GitHub</a>
         <a href="https://github.com/haniffzain/ziuf/blob/main/ROADMAP.md">Roadmap</a>
         <a href="https://github.com/haniffzain/ziuf/blob/main/HISTORY.md">History</a>
-        <a href="https://buymeacoffee.com/ziuf">Support</a>
       </div>
       <p class="copyright">© <span id="year">2026</span> M. Haniff · Ziuf OS</p>
     </div>
