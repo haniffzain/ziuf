@@ -8,15 +8,15 @@
   const year = document.querySelector('#year');
 
   const storedTheme = localStorage.getItem('ziuf-theme');
-  const systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  const initialTheme = storedTheme || (systemLight ? 'light' : 'dark');
+  const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = storedTheme || (systemDark ? 'dark' : 'light');
 
   const setTheme = (theme) => {
     root.dataset.theme = theme;
     localStorage.setItem('ziuf-theme', theme);
     if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☼' : '☾';
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#0b1010' : '#f2f0e8');
+    if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#111210' : '#f4f2ec');
   };
 
   setTheme(initialTheme);
