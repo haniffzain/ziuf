@@ -1,119 +1,12 @@
 (() => {
-  const root = document.documentElement;
-  const header = document.querySelector('.site-header');
-  const nav = document.querySelector('#site-nav');
-  const navToggle = document.querySelector('.nav-toggle');
-  const themeToggle = document.querySelector('.theme-toggle');
-  const themeIcon = document.querySelector('.theme-icon');
-  const year = document.querySelector('#year');
-  const scrollCat = document.querySelector('.scroll-cat');
-  const catLabel = scrollCat?.querySelector('.cat-label');
-  const catArt = scrollCat?.querySelector('.cat-art');
-
-  const storedTheme = localStorage.getItem('ziuf-theme');
-  const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = storedTheme || (systemDark ? 'dark' : 'light');
-
-  const setTheme = (theme) => {
-    root.dataset.theme = theme;
-    localStorage.setItem('ziuf-theme', theme);
-    if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☼' : '☾';
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#111210' : '#f4f2ec');
-  };
-
-  setTheme(initialTheme);
-
-  themeToggle?.addEventListener('click', () => {
-    setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
-  });
-
-  const closeNav = () => {
-    nav?.classList.remove('open');
-    navToggle?.setAttribute('aria-expanded', 'false');
-    navToggle?.setAttribute('aria-label', 'Open navigation');
-  };
-
-  navToggle?.addEventListener('click', () => {
-    const open = nav?.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(Boolean(open)));
-    navToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-  });
-
-  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
-
-  const catMoods = {
-    default: {
-      label: 'ziuf.cat',
-      art: ' /\\_/\\\n( o.o )\n > ^ <'
-    },
-    sentinel: {
-      label: 'sentinel.watch',
-      art: ' /\\_/\\\n( O.O )\n > ^ <'
-    },
-    privacy: {
-      label: 'privacy.local · zZ',
-      art: ' /\\_/\\\n( -.- ) zZ\n > ^ <'
-    },
-    done: {
-      label: '~ done.',
-      art: ' /\\_/\\\n( ^.^ )\n > ^ <'
-    }
-  };
-
-  let currentMood = '';
-  const setCatMood = (mood) => {
-    if (!scrollCat || !catLabel || !catArt || mood === currentMood) return;
-    const next = catMoods[mood] || catMoods.default;
-    catLabel.textContent = next.label;
-    catArt.textContent = next.art;
-    scrollCat.dataset.mood = mood;
-    currentMood = mood;
-  };
-
-  const sectionAtViewportFocus = () => {
-    const footer = document.querySelector('.site-footer');
-    const privacy = document.querySelector('.privacy-band');
-    const platform = document.querySelector('#platform');
-    const focusY = window.innerHeight * 0.58;
-
-    const crossesFocus = (element) => {
-      if (!element) return false;
-      const rect = element.getBoundingClientRect();
-      return rect.top <= focusY && rect.bottom >= focusY;
-    };
-
-    if (footer && footer.getBoundingClientRect().top < window.innerHeight * 0.82) return 'done';
-    if (crossesFocus(privacy)) return 'privacy';
-    if (crossesFocus(platform)) return 'sentinel';
-    return 'default';
-  };
-
-  let lastScrollY = window.scrollY;
-  let catIdleTimer;
-
-  const updateOnScroll = () => {
-    const currentY = window.scrollY;
-    header?.classList.toggle('scrolled', currentY > 18);
-    setCatMood(sectionAtViewportFocus());
-
-    if (scrollCat && Math.abs(currentY - lastScrollY) > 1) {
-      scrollCat.dataset.direction = currentY > lastScrollY ? 'down' : 'up';
-      scrollCat.classList.add('is-moving');
-      window.clearTimeout(catIdleTimer);
-      catIdleTimer = window.setTimeout(() => scrollCat.classList.remove('is-moving'), 170);
-    }
-
-    lastScrollY = currentY;
-  };
-
-  updateOnScroll();
-  window.addEventListener('scroll', updateOnScroll, { passive: true });
-  window.addEventListener('resize', () => setCatMood(sectionAtViewportFocus()), { passive: true });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeNav();
-  });
-
-  if (year) year.textContent = String(new Date().getFullYear());
+ const menu=document.querySelector('.menu'),nav=document.querySelector('nav');
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+ const content={zpm:{title:'One clear package path.',copy:"ZPM — Ziuf Package Manager — provides the project's package-management identity, built around a controlled package architecture.",command:'zpm install firefox',output:['Package management, on your terms.','install · update · upgrade · remove'],label:'package preview'},desktop:{title:'A desktop with room to evolve.',copy:'A Wayland-first environment made of independent, restartable components. Session, shell, ZBar and native tools develop behind clear interfaces.',command:'Ziuf Desktop / component map',output:['session → shell → ZBar','launcher · settings · notifications','Development direction · not a released desktop'],label:'desktop architecture'},sentinel:{title:'Understand before defending.',copy:'Sentinel is being developed around local network behaviour. Observation comes first; defensive responses must earn their place through verification.',command:'Sentinel / engineering direction',output:['observe → analyse → defend','Local-first network behaviour','Under development'],label:'security direction'},tor:{title:'Privacy routing. Your choice.',copy:'Tor Route is a planned, optional capability for selected applications or traffic. The user decides when and where it is enabled.',command:'Tor Route / planned capability',output:['Selected applications · explicit control','Optional routing, chosen by you','Planned · not a released feature'],label:'privacy direction'}};
+ const tabs=[...document.querySelectorAll('[role=tab]')];let active='zpm';
+ function select(tab){active=tab.dataset.tab;tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===tab));t.tabIndex=t===tab?0:-1;});const c=content[active];document.querySelector('#panel').setAttribute('aria-labelledby',tab.id);document.querySelector('#panel-title').textContent=c.title;document.querySelector('#panel-copy').textContent=c.copy;document.querySelector('#command').textContent=c.command;document.querySelector('#terminal-label').textContent='ziuf / '+c.label;document.querySelector('#terminal-output').replaceChildren(...c.output.map(t=>{const p=document.createElement('p');p.textContent=t;return p;}));document.querySelector('#copy').hidden=active!=='zpm';}
+ tabs.forEach((t,i)=>{t.addEventListener('click',()=>select(t));t.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();select(tabs[n]);tabs[n].focus();}});});
+ let timer;document.querySelector('#copy').addEventListener('click',async()=>{const toast=document.querySelector('.toast');try{await navigator.clipboard.writeText(content[active].command);toast.textContent='Example command copied';}catch{toast.textContent='Copy command: '+content[active].command;}toast.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove('show'),3000);});
+ const progress=document.querySelector('.progress');const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';};addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+ if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.08});document.querySelectorAll('.section-heading,.values article,.platform-grid,.timeline article').forEach(el=>{el.classList.add('reveal');observer.observe(el);});}
 })();
