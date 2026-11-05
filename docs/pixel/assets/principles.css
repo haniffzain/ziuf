@@ -1,0 +1,29 @@
+/* Ziuf privacy/ownership/WYSIWYG storytelling, pixel-monochrome editorial design. */
+.principles{background:#f6f6f3;color:#111;padding:100px 0 105px;min-height:0}
+.principles .shell{width:min(1170px,90%);margin-inline:auto}
+.principles-kicker{font:10px/1.8 var(--pixel);letter-spacing:.03em}
+.principles h2{font:clamp(22px,3.1vw,43px)/1.55 var(--pixel);margin:22px 0 20px;max-width:900px}
+.principles-lead{font:14px/1.9 var(--mono);max-width:910px;margin:0 0 30px}
+.principles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.principle{border:3px solid #111;background:#fff;box-shadow:6px 6px 0 #d0d0d0;padding:23px;display:flex;flex-direction:column;gap:11px}
+.principle .principle-number{font:9px var(--pixel);color:#555}
+.principle h3{font:clamp(11px,1.1vw,14px)/1.6 var(--pixel);margin:0}
+.principle p{font:12px/1.85 var(--mono);margin:0;color:#333}
+.principle .principle-note{display:block;font:10px/1.7 var(--mono);color:#666;margin-top:auto;border-top:1px dashed #888;padding-top:10px}
+.principles-disclosure{margin:31px 0 0;border-left:4px solid #111;padding:12px 20px;background:#e7e7e4;max-width:1120px;font:12px/1.9 var(--mono)}
+.principles-disclosure strong{font-weight:700}
+.principles-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.principles-links .button{color:#111}
+.zd-toolbar{display:flex;gap:3px;flex-wrap:wrap;align-items:center;padding:5px;border-bottom:2px solid #111;background:#eee}
+.zd-toolbar button{background:#fff;color:#111;border:1px solid #111;min-height:26px;min-width:28px;padding:3px 6px;cursor:pointer;font:700 11px var(--mono)}
+.zd-toolbar button:hover,.zd-toolbar button:focus-visible{background:#111;color:#fff}
+.zd-toolbar .zd-format-label{font:9px var(--mono);margin-inline:4px;white-space:nowrap}
+.zd-notebody [contenteditable="true"]{background:#fff;color:#111;flex:1;min-height:0;overflow-y:auto;outline-offset:-2px;padding:11px;font:12px/1.55 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.zd-notebody [contenteditable="true"] h3{font:700 14px/1.5 var(--mono);margin:.3em 0}
+.zd-notebody [contenteditable="true"] p{margin:.4em 0}
+.zd-notebody [contenteditable="true"] ul{margin:4px 0;padding-left:22px;list-style:square}
+.zd-notebody [contenteditable="true"] ol{margin:4px 0;padding-left:22px}
+.zd-notebody [contenteditable="true"]:focus-visible{outline:2px dashed #555}
+.zd-notestatus{white-space:normal}
+@media(max-width:990px){.principles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.principles{padding:70px 0}.principles-grid{grid-template-columns:1fr}.principles h2{font-size:23px}.principle{padding:19px}.zd-toolbar .zd-format-label{display:none}}
