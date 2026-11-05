@@ -1,0 +1,32 @@
+/* ZORX Blocks and honest Linux gaming direction: monochrome pixel layout. */
+.games{min-height:0;padding:100px 0 110px;background:radial-gradient(circle at 70% 35%,#303030,#0a0a0a 65%)}
+.games .shell{width:min(1220px,90%);display:grid;grid-template-columns:minmax(270px,1fr) minmax(280px,440px);gap:clamp(28px,5vw,65px);align-items:center}
+.games .section-title{margin:12px 0 20px}
+.games .section-copy{max-width:555px}
+.game-intro .game-heading{font:11px/1.8 var(--pixel)}
+.games .game-screen{padding:12px;border:4px solid #fff;border-radius:6px;box-shadow:12px 12px 0 #555;transform:none!important;max-width:440px;width:100%;margin-inline:auto;background:#f1f1f1}
+.blocks-top{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:1px 1px 10px;color:#111;font:clamp(9px,1vw,12px) var(--pixel)}
+.blocks-main{display:grid;grid-template-columns:minmax(0,300px) minmax(78px,1fr);gap:10px;align-items:start}
+#blocks-canvas{display:block;min-width:0;width:100%;height:auto;background:#111;image-rendering:pixelated;border:3px solid #111;outline-offset:4px}
+.blocks-side{background:#151515;color:#fff;display:flex;flex-direction:column;gap:13px;padding:10px 8px;min-height:200px;border:2px solid #111}
+.blocks-stat{font:10px/1.8 var(--mono);border-bottom:1px dashed #7d7d7d;padding-bottom:6px}
+.blocks-stat strong{display:block;font:clamp(11px,1.6vw,19px)/1.5 var(--pixel);margin-top:3px;font-variant-numeric:tabular-nums}
+.blocks-next-label{font:9px var(--pixel)}
+#blocks-next{display:block;width:100%;height:auto;background:#111;image-rendering:pixelated}
+.blocks-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
+.blocks-controls button,.blocks-actions button{cursor:pointer;border:2px solid #111;background:#fff;color:#111;padding:9px 5px;min-height:38px;font:clamp(10px,1vw,13px) var(--mono);font-weight:bold;touch-action:manipulation}
+.blocks-controls button:hover,.blocks-controls button:focus-visible,.blocks-actions button:hover{background:#111;color:#fff}
+.blocks-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.blocks-actions button{padding:10px 14px}
+#blocks-status{color:#ddd;font:12px/1.7 var(--mono);min-height:40px}
+.blocks-help{font:11px/1.7 var(--mono);color:#ccc}
+.gaming-vision{width:min(1220px,90%);margin:65px auto 0!important;display:block!important;border-top:1px solid #555;padding-top:47px}
+.gaming-vision h3{font:clamp(15px,2.2vw,28px)/1.8 var(--pixel);margin:12px 0}
+.gaming-vision .gaming-lead{font:14px/1.9 var(--mono);max-width:950px;color:#ddd}
+.gaming-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:28px 0}
+.gaming-pillar{border:2px solid #aaa;background:#1b1b1b;padding:22px;min-height:186px}
+.gaming-pillar h4{font:11px/1.7 var(--pixel);margin:0 0 12px}
+.gaming-pillar p{font:12px/1.9 var(--mono);margin:0;color:#ddd}
+.gaming-honesty{font:12px/1.85 var(--mono);border-left:3px solid #eee;padding:4px 0 4px 16px;color:#dedede;max-width:1020px;margin:24px 0 0}
+@media(max-width:940px){.games .shell{grid-template-columns:1fr;max-width:720px}.games .game-screen{max-width:410px}.gaming-pillars{grid-template-columns:1fr}.gaming-pillar{min-height:0}.gaming-vision{margin-top:50px!important}}
+@media(max-width:440px){.games{padding:75px 0}.games .shell,.gaming-vision{width:92%}.games .game-screen{padding:7px}.blocks-main{gap:5px;grid-template-columns:minmax(0,3fr) minmax(76px,1fr)}.blocks-side{padding:5px;gap:8px}.blocks-stat{font-size:9px}.blocks-stat strong{font-size:10px}.blocks-controls button{padding:6px 3px}.gaming-vision{padding-top:28px}}
+@media(prefers-reduced-motion:reduce){.games .game-screen{transition:none!important}}
