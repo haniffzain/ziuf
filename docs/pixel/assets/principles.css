@@ -27,3 +27,6 @@
 .zd-notestatus{white-space:normal}
 @media(max-width:990px){.principles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.principles{padding:70px 0}.principles-grid{grid-template-columns:1fr}.principles h2{font-size:23px}.principle{padding:19px}.zd-toolbar .zd-format-label{display:none}}
+
+/* Allocate extra editor room without covering the taskbar in the desktop demo. */
+.zd-note{top:8%;height:72%}
