@@ -1,0 +1,36 @@
+
+/* Ziuf interactive desktop: contained, responsive browser demo */
+.ziuf .shell{grid-template-columns:minmax(230px,.78fr) minmax(0,1.5fr);gap:35px;width:min(1320px,94%)}
+.ziuf .peek{display:none}
+.ziuf-desktop{position:relative;aspect-ratio:16/10;min-height:350px;max-height:640px;width:100%;overflow:hidden;background:#202020;color:#fff;border:5px solid #111;border-radius:9px;box-shadow:12px 12px 0 #aaa;font-family:var(--mono);isolation:isolate}
+.zd-wall{position:absolute;inset:0;background:radial-gradient(circle at 72% 31%,#ddd 0 8%,transparent 8.1%),radial-gradient(circle at 72% 31%,#aaa 0 10%,transparent 10.3%),linear-gradient(135deg,#0b0b0b,#373737 70%,#151515)}
+.zd-wall:before,.zd-wall:after{content:"";position:absolute;inset:auto 0 44px;height:45%;background:#595959;clip-path:polygon(0 88%,14% 30%,24% 65%,45% 8%,65% 80%,76% 37%,100% 91%,100% 100%,0 100%)}
+.zd-wall:after{background:#171717;height:30%;clip-path:polygon(0 60%,16% 90%,36% 15%,52% 80%,76% 10%,100% 70%,100% 100%,0 100%)}
+.zd-brand{position:absolute;right:4%;top:13%;font:clamp(17px,3vw,42px) var(--pixel);color:#e6e6e6;text-shadow:5px 6px #333;pointer-events:none}
+.zd-icon{position:absolute;top:20px;left:19px;border:1px solid transparent;color:#fff;background:transparent;display:flex;flex-direction:column;align-items:center;gap:5px;padding:5px;cursor:pointer;font-size:10px;text-shadow:1px 1px #000}
+.zd-icon span:first-child{font-size:31px}.zd-icon:hover,.zd-icon:focus-visible{border:1px dashed #fff;background:#2228}
+.zd-taskbar{position:absolute;bottom:0;left:0;right:0;height:45px;background:#ececec;color:#111;border-top:3px solid #111;display:flex;align-items:center;gap:6px;padding:5px 7px;z-index:12}
+.zd-taskbar button{border:2px solid #111;background:#fff;color:#111;min-width:37px;height:32px;cursor:pointer;font-family:var(--mono);font-weight:700}
+.zd-taskbar button:hover,.zd-taskbar button[aria-pressed="true"]{background:#111;color:#fff}
+.zd-taskbar .zd-start{font-family:var(--pixel);font-size:12px;min-width:43px}
+.zd-clock{margin-left:auto;background:#fff;border:1px solid #111;padding:6px 8px;font-size:11px;font-weight:bold;white-space:nowrap;font-variant-numeric:tabular-nums}
+.zd-startmenu{position:absolute;z-index:15;bottom:50px;left:8px;width:min(255px,calc(100% - 16px));background:#fafafa;color:#111;border:4px solid #111;box-shadow:6px 6px 0 #0009;padding:10px}
+.zd-startmenu[hidden],.zd-note[hidden]{display:none}
+.zd-menuhead{font:11px var(--pixel);border-bottom:2px solid #111;padding:8px 5px 13px}
+.zd-startmenu button{display:block;width:100%;margin-top:6px;border:0;background:transparent;color:#111;text-align:left;padding:10px 8px;cursor:pointer;font:12px var(--mono)}
+.zd-startmenu button:hover,.zd-startmenu button:focus-visible{background:#111;color:#fff}
+.zd-menufine{border-top:1px dashed #888;font:10px var(--mono);padding:12px 5px 0;color:#555}
+.zd-note{position:absolute;z-index:7;top:17%;left:17%;width:min(72%,420px);height:62%;min-height:186px;background:#fff;color:#111;border:4px solid #111;box-shadow:8px 8px 0 #0009;display:flex;flex-direction:column;resize:both;overflow:hidden;min-width:190px}
+.zd-note.maxed{inset:5px 5px 51px 5px!important;width:auto!important;height:auto!important;resize:none}
+.zd-titlebar{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:8px 10px;border-bottom:3px solid #111;background:#f6f6f6;cursor:grab;user-select:none;touch-action:none}
+.zd-titlebar:active{cursor:grabbing}
+.zd-title{font:clamp(8px,.8vw,11px) var(--pixel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.zd-controls{display:flex;gap:4px;flex-shrink:0}
+.zd-controls button{border:2px solid #111;background:#fff;color:#111;width:26px;height:23px;cursor:pointer;font:700 15px var(--mono);line-height:17px;padding:0}
+.zd-controls button:hover{background:#111;color:#fff}
+.zd-notebody{flex:1;display:flex;flex-direction:column;min-height:0;background:#fff}
+.zd-notebody textarea{border:0;outline:0;resize:none;width:100%;height:100%;background:#fff;color:#111;padding:12px;font:12px/1.6 var(--mono)}
+.zd-notestatus{font:10px var(--mono);padding:4px 9px;border-top:1px solid #bbb;background:#eee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.zd-demo-caption{font:10px/1.6 var(--mono);margin-top:23px;color:#555}
+@media(max-width:980px){.ziuf .shell{grid-template-columns:1fr;width:90%;gap:35px}.ziuf-desktop{max-width:750px;margin:auto}.zd-title{font-size:10px}}
+@media(max-width:500px){.ziuf-desktop{min-height:310px;aspect-ratio:4/3}.zd-note{left:8%;width:84%;height:60%}.zd-title{font-size:8px}.zd-brand{font-size:22px}.zd-clock{font-size:10px}.zd-startmenu{bottom:50px}}
