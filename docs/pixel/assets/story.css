@@ -33,3 +33,21 @@
 @media(max-width:850px){.story-intro,.direction-grid{grid-template-columns:1fr}.why-story,.direction-story{padding:72px 0}.story-intro h2,.direction-story h2{font-size:clamp(20px,5.4vw,34px)}.story-aside{max-width:620px}.story-card{min-height:auto}}
 @media(max-width:580px){.story-cards{grid-template-columns:1fr;gap:12px;margin-top:30px}.story-card{padding:22px}.direction-panel{padding:20px}.story-aside{padding:21px}.story-kicker{font-size:8px}.direction-story h2,.story-intro h2{letter-spacing:-.3px}.story-note{margin-top:27px}}
 @media(prefers-reduced-motion:reduce){.story-card{transition:none}.story-card:hover{transform:none}}
+
+/* The documented ZORX -> Ziuf build journey, laid out as a readable timeline. */
+#why,#journey,#difference{scroll-margin-top:85px}
+.journey-story{margin-top:76px;padding-top:52px;border-top:2px dashed #777}
+.journey-story h3{font:clamp(18px,2.5vw,33px)/1.6 var(--pixel);margin:14px 0 18px;letter-spacing:-.4px}
+.journey-lead{font:14px/1.9 var(--mono);max-width:950px;color:#e4e4e4;margin:0 0 28px}
+.journey-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;counter-reset:journey}
+.journey-step{position:relative;min-width:0;background:#181818;border:2px solid #777;padding:24px 24px 26px;box-shadow:5px 5px 0 #333}
+.journey-step h4{font:clamp(11px,1.15vw,14px)/1.7 var(--pixel);margin:14px 0 10px}
+.journey-step p{font:12px/1.9 var(--mono);color:#dedede;margin:0}
+.journey-stamp{display:inline-block;font:10px/1.8 var(--pixel);color:#dedede}
+.journey-step-future{grid-column:1/-1;border-color:#fff;background:#242424}
+.journey-step-future p{max-width:940px}
+.journey-footer{font:13px/1.9 var(--mono);margin:24px 0 14px;padding-left:17px;border-left:3px solid #fff;color:#e6e6e6}
+.journey-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.journey-links .button{font-size:11px}
+@media(max-width:760px){.journey-steps{grid-template-columns:1fr}.journey-story{margin-top:55px;padding-top:34px}.journey-step-future{grid-column:auto}}
+@media(max-width:580px){.journey-step{padding:19px}.journey-story h3{font-size:19px}.journey-stamp{font-size:8px}.journey-links .button{font-size:10px}}
