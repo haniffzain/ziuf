@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 670" role="img" aria-labelledby="voxel-title voxel-desc">
+<title id="voxel-title">ZORX voxel guardian kitten</title>
+<desc id="voxel-desc">A cute but serious seated cat made of monochrome voxel-like blocks, with Z headphones, square goggles and scarf. Both front paws rest on the floor. Eyes can track a mouse pointer, and squared ears twitch.</desc>
+<style>
+svg{shape-rendering:crispEdges}
+#ear-left,#ear-right{transform-box:view-box}
+#ear-left{transform-origin:216px 197px}
+#ear-right{transform-origin:414px 197px}
+#tail-voxel{transform-box:view-box;transform-origin:214px 486px;animation:tail-tick 5s steps(3,end) infinite}
+@keyframes tail-tick{0%,65%,100%{transform:rotate(0deg)}75%{transform:rotate(-3deg)}90%{transform:rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){#tail-voxel{animation:none}}
+</style>
+<!-- shadow platform -->
+<ellipse cx="323" cy="626" rx="227" ry="27" fill="#070707" opacity=".22"/>
+<!-- stepped, chunky tail behind body -->
+<g id="tail-voxel" stroke="#080808" stroke-width="9" stroke-linejoin="miter">
+<path d="M219 507H151V478H104V431H76V369H99V346H138V366H124V414H159V448H202V460H236Z" fill="#777"/>
+<path d="M75 372H99V351H132V369H113V394H75Z" fill="#fff" stroke-width="6"/>
+<path d="M139 451h39v24h-39z" fill="#aaa" stroke="none"/>
+</g>
+<!-- rear torso: top and right side for voxel depth -->
+<polygon points="189,411 219,391 427,390 454,414 443,581 421,603 195,606 177,580" fill="#111"/>
+<polygon points="219,397 442,406 421,430 197,429" fill="#c5c5c5" stroke="#111" stroke-width="9"/>
+<polygon points="422,414 456,390 467,554 440,598 419,599" fill="#555" stroke="#111" stroke-width="9"/>
+<path d="M182 416H428V579L409 606H204L180 577Z" fill="#858585" stroke="#111" stroke-width="10" stroke-linejoin="miter"/>
+<!-- white chest fur in staggered pixel squares -->
+<path d="M261 420H348V445H371V476H390V522H365V555H350V579H331V592H285V575H269V547H244V522H226V466H246V444H261Z" fill="#f7f7f7" stroke="#111" stroke-width="8" stroke-linejoin="miter"/>
+<rect x="273" y="466" width="18" height="18" fill="#dbdbdb"/><rect x="342" y="497" width="15" height="16" fill="#ddd"/>
+<!-- left seated leg -->
+<path d="M206 502H261V565H274V592H262V608H202V588H188V549H203Z" fill="#aaa" stroke="#111" stroke-width="8"/>
+<path d="M198 578H270V608H256V622H203V608H189V592Z" fill="#fff" stroke="#111" stroke-width="8"/>
+<path d="M221 600v17m25-17v17" stroke="#111" stroke-width="6"/>
+<!-- right seated leg -->
+<path d="M368 503H423V547H437V590H427V608H372V591H361V558Z" fill="#888" stroke="#111" stroke-width="8"/>
+<path d="M360 580H428V609H413V623H366V611H354V596Z" fill="#fff" stroke="#111" stroke-width="8"/>
+<path d="M383 600v18m23-18v18" stroke="#111" stroke-width="6"/>
+<!-- squarish ears can animate separately -->
+<g id="ear-left">
+<path d="M154 209V99H172V70H205V92H225V119H252V215Z" fill="#999" stroke="#080808" stroke-width="12" stroke-linejoin="miter"/>
+<path d="M176 194V112H192V103H203V119H217V145H233V193Z" fill="#f4f4f4" stroke="#111" stroke-width="6"/>
+<rect x="187" y="140" width="19" height="28" fill="#c4c4c4"/>
+</g>
+<g id="ear-right">
+<path d="M370 213V124H390V94H409V68H440V90H458V122H472V209Z" fill="#888" stroke="#080808" stroke-width="12" stroke-linejoin="miter"/>
+<path d="M389 194V145H404V118H420V105H433V135H448V192Z" fill="#f7f7f7" stroke="#111" stroke-width="6"/>
+<rect x="413" y="142" width="17" height="30" fill="#bbb"/>
+</g>
+<!-- head: stacked rear/top/side planes, front remains square and plush -->
+<polygon points="145,197 173,165 475,165 498,200 470,220 157,225" fill="#777" stroke="#090909" stroke-width="10" stroke-linejoin="miter"/>
+<polygon points="458,203 498,178 513,220 513,386 478,412 459,391" fill="#595959" stroke="#080808" stroke-width="10"/>
+<path d="M156 205H459V240H482V369H459V398H438V421H189V405H165V385H144V240H156Z" fill="#aaa" stroke="#080808" stroke-width="11" stroke-linejoin="miter"/>
+<!-- pixel forehead highlight, white central blaze -->
+<rect x="180" y="211" width="75" height="19" fill="#c4c4c4"/>
+<rect x="289" y="229" width="27" height="41" fill="#fff"/>
+<rect x="298" y="261" width="30" height="65" fill="#fff"/>
+<rect x="283" y="303" width="55" height="50" fill="#fff"/>
+<!-- broad white fluffy square cheeks -->
+<path d="M164 327H210V343H261V320H277V337H348V321H368V343H424V326H462V359H448V374H425V392H406V408H214V396H191V380H177V365H164Z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="miter"/>
+<!-- square framed eyes -->
+<rect x="213" y="269" width="75" height="79" fill="#fff" stroke="#111" stroke-width="9"/>
+<rect x="349" y="269" width="75" height="79" fill="#fff" stroke="#111" stroke-width="9"/>
+<!-- visible white sclera surrounds movable pupils -->
+<g id="pupil-left"><rect x="226" y="279" width="48" height="60" fill="#090909"/><rect x="233" y="287" width="15" height="17" fill="#fff"/><rect x="256" y="316" width="10" height="11" fill="#777"/></g>
+<g id="pupil-right"><rect x="362" y="279" width="48" height="60" fill="#090909"/><rect x="369" y="287" width="15" height="17" fill="#fff"/><rect x="393" y="316" width="10" height="11" fill="#777"/></g>
+<!-- stern little eyebrows, nose and cat smile -->
+<path d="M215 257h41v-7h-41zm144-7h44v7h-44z" fill="#111"/>
+<path d="M304 350h26v12h-8v8h-10v-8h-8z" fill="#080808"/>
+<path d="M311 370v8h-11v8h-11m33-16v8h10v8h12" fill="none" stroke="#111" stroke-width="6" stroke-linejoin="miter"/>
+<path d="M177 362h-27m27 12h-23m273-12h27m-27 12h23" stroke="#111" stroke-width="6"/>
+<rect x="245" y="376" width="8" height="10" fill="#666"/><rect x="379" y="376" width="8" height="10" fill="#666"/>
+<!-- voxel goggles: strap / extruded pair of frames -->
+<path d="M189 220v-18h23v-17h216v19h18v14" fill="none" stroke="#111" stroke-width="15" stroke-linejoin="miter"/>
+<path d="M220 204h85v32h-16v15h-69z" fill="#222" stroke="#111" stroke-width="9"/>
+<path d="M328 204h91v32h-17v15h-74z" fill="#222" stroke="#111" stroke-width="9"/>
+<path d="M231 208h63v25h-63zM339 208h68v25h-68z" fill="#bcbcbc" stroke="#eee" stroke-width="6"/>
+<rect x="237" y="212" width="31" height="7" fill="#fff"/><rect x="346" y="212" width="31" height="7" fill="#fff"/>
+<!-- square headphones with raised Z -->
+<rect x="157" y="260" width="51" height="89" fill="#111" stroke="#111" stroke-width="8"/>
+<path d="M153 263h48v79h-48z" fill="#686868" stroke="#111" stroke-width="8"/>
+<rect x="163" y="280" width="32" height="46" fill="#f6f6f6"/>
+<path d="M168 287h23l-20 29h23" fill="none" stroke="#111" stroke-width="6" stroke-linejoin="miter"/>
+<path d="M465 275h20v56h-20z" fill="#555" stroke="#111" stroke-width="7"/>
+<!-- dark triangular pixel bandana, small bold Z -->
+<path d="M210 414H424V450H407V476H382V497H351V525H322V505H293V483H268V463H244V449H210Z" fill="#111" stroke="#080808" stroke-width="7" stroke-linejoin="miter"/>
+<path d="M296 452h61v13h-17v12h-18v13h36v13h-66v-13h15v-13h17v-13h-28z" fill="#fff"/>
+<path d="M403 443h27v11h25v17h-39v-11h-13z" fill="#444" stroke="#080808" stroke-width="6"/>
+<!-- a few pixel glints and voxel top highlights -->
+<rect x="177" y="179" width="27" height="7" fill="#e5e5e5"/><rect x="446" y="180" width="19" height="7" fill="#ddd"/>
+</svg>
