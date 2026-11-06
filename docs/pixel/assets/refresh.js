@@ -60,13 +60,13 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden){scheduleP
 async function hydrateMascot(){
  const img=cat.querySelector('img.mascot-drawn');if(!img)return;
  try{
-   const response=await fetch('assets/zorx-observer.svg',{cache:'force-cache'});
+   const response=await fetch('assets/zorx-voxel.svg',{cache:'force-cache'});
    if(!response.ok)throw Error('Mascot fetch '+response.status);
    const xml=new DOMParser().parseFromString(await response.text(),'image/svg+xml');
    if(xml.querySelector('parsererror'))throw Error('SVG parse failed');
    const loaded=document.importNode(xml.documentElement,true);
    loaded.classList.add('mascot-drawn');loaded.setAttribute('role','img');
-   loaded.setAttribute('aria-label','Seated ZORX kitten whose eyes follow the cursor and ears twitch');
+   loaded.setAttribute('aria-label','Blocky monochrome voxel ZORX kitten whose eyes follow the cursor and ears twitch');
    if(!alive)return;
    img.replaceWith(loaded);
    svg=loaded;eyeLeft=loaded.querySelector('#pupil-left');eyeRight=loaded.querySelector('#pupil-right');
