@@ -37,9 +37,9 @@
 <div class="hero-copy reveal">
 <div class="eyebrow">[ FROM ZORX TO ZIUF — OUR LINUX JOURNEY ]</div>
 <h1 class="px">ZORX_</h1>
-<h2 class="px">YOUR COMPUTER.<br>YOUR FREEDOM.</h2>
-<p>Why build another operating system? Because your computer should work for you—not ask you to spend your life looking after it.</p>
-<p>Born as ZORX, continuing as <strong>Ziuf OS</strong>: an independent Linux project with a curious spirit and a serious engineering mission.</p>
+<h2 class="px">LESS TROUBLE.<br>MORE LIFE.</h2>
+<p>We are not building an OS to beat other operating systems. We are building one around a simpler belief: your computer should help with daily life, not become another thing you must constantly look after.</p>
+<p>Born as ZORX and continuing as <strong>Ziuf OS</strong>, this is a Linux journey built through difficult lessons, careful tests and one small success at a time.</p>
 <div class="cta-row"><a class="button light" href="#why">› WHY ZIUF?</a><a class="button outline" href="#ziuf">› TRY THE DESKTOP</a></div>
 <div class="hero-flair"><span>◇ PRIVACY BY DESIGN</span><span>♡ BUILT WITH CARE</span></div>
 <div class="micro">IN ACTIVE DEVELOPMENT • NO STABLE RELEASE YET</div>
@@ -60,29 +60,42 @@
 <div class="shell">
 <div class="story-intro">
 <div class="reveal">
-<div class="story-kicker">01 / THE QUESTION THAT STARTED IT ALL</div>
-<h2 id="why-title">WHAT IF YOUR OS CARED FOR YOU?</h2>
-<p>We have powerful computers, yet too much of our attention can disappear into updates, settings, troubleshooting and wondering what a system is doing in the background. Technology should give us room to create—not become another thing to constantly manage.</p>
-<p><strong>ZORX began with a question:</strong> Can we build a Linux system that respects its owner's privacy, stays understandable, and takes care of routine work wherever possible?</p>
-<p>The journey began under the name ZORX OS. Today that same engineering journey continues as <strong>Ziuf OS</strong>. The name evolved; the ambition and technical history did not start over.</p>
+<div class="story-kicker">01 / A SIMPLE BELIEF, A DIFFICULT JOURNEY</div>
+<h2 id="why-title">NOT BUILT TO COMPETE. BUILT TO CARE.</h2>
+<p><strong>ZORX was not created to rank itself above Windows, macOS or other Linux distributions.</strong> Those systems have their own strengths, communities and achievements. We respect the work that came before us, and we continue to learn from open-source technology.</p>
+<p>Our question was different: <strong>Could an operating system make everyday computing less demanding?</strong> Could it reduce unnecessary maintenance, protect people's privacy, make problems easier to understand, and leave more time for study, work, family, creativity and play?</p>
+<p>That belief became the reason to build ZORX. The project later continued under the public name <strong>Ziuf OS</strong>. Its purpose stayed the same: to try, patiently and through real engineering, to build an OS that looks after its user rather than asking to be looked after all the time.</p>
 </div>
 <aside class="story-aside reveal">
-<span class="story-chip">THE IDEA</span>
-<p class="story-quote">LESS LOOKING AFTER YOUR OS.<br>MORE LIVING WITH IT.</p>
-<p class="story-small">Not magic. Not a promise of zero maintenance. A design direction: make everyday computing quieter, clearer and more respectful of the person at the keyboard.</p>
-<a class="button outline" href="#ziuf">› SEE THE DESKTOP CONCEPT</a>
+<span class="story-chip">OUR PURPOSE</span>
+<p class="story-quote">AN OS SHOULD HELP YOU LIVE.<br>NOT GIVE YOU MORE TO MANAGE.</p>
+<p class="story-small">A belief to work toward, not a claim that every problem is already solved. We hope to earn trust by making the work visible and letting the evidence speak.</p>
+<a class="button outline" href="#journey">› HOW WE GOT HERE</a>
 </aside>
 </div>
-<div class="story-cards">
-<article class="story-card reveal"><span class="story-num">01 / LESS MAINTENANCE</span><h3>LET THE SYSTEM DO ITS PART.</h3><p>We aim to reduce unnecessary upkeep through sensible defaults, recovery-minded design and routine tasks that demand less attention—while keeping important choices in your hands.</p></article>
-<article class="story-card reveal"><span class="story-num">02 / PRIVACY WITH PURPOSE</span><h3>YOUR LIFE IS NOT TELEMETRY.</h3><p>Ziuf is being designed around no automatic user-activity telemetry, local-first diagnostics and deliberate consent when information is shared. Privacy must be engineered and verified, not merely advertised.</p></article>
-<article class="story-card reveal"><span class="story-num">03 / INDEPENDENT FOUNDATION</span><h3>MORE THAN A NEW WALLPAPER.</h3><p>Ziuf is building a controlled Linux foundation, package-management path and modular Wayland-first desktop—not simply changing the appearance of an existing distribution.</p></article>
-<article class="story-card reveal"><span class="story-num">04 / EVIDENCE BEFORE HYPE</span><h3>BUILD IT. TEST IT. PROVE IT.</h3><p>Bootstrap tools, system layers, package signing and security foundations are tracked through milestones and validation gates. We want the work behind the pixels to be inspectable.</p></article>
+<div class="journey-story reveal" id="journey" aria-labelledby="journey-title">
+<div class="story-kicker">THE BUILD — CHALLENGES, LESSONS AND REAL MILESTONES</div>
+<h3 id="journey-title">IT DID NOT WORK THE FIRST TIME.</h3>
+<p class="journey-lead">An operating system is not built by choosing a beautiful theme and calling it complete. Under the desktop are compilers, libraries, permissions, packages, boot processes, recovery paths and security rules. Getting them to work together demanded more than enthusiasm. It demanded patience.</p>
+<div class="journey-steps">
+<article class="journey-step"><span class="journey-stamp">01 / THE SETBACKS</span><h4>WHEN THE BUILD BROKE.</h4><p>Early bootstrap attempts faced truncated source downloads, interruptions in the WSL build environment and a sudo/chroot credential-lifecycle problem. Progress stopped. The project had to investigate why, not simply pretend the failures had never happened.</p></article>
+<article class="journey-step"><span class="journey-stamp">02 / THE LESSON</span><h4>REPAIR THE PROCESS, NOT JUST THE ERROR.</h4><p>Failures became engineering evidence. Source verification, retry handling, isolation checks and build validation were strengthened. Each setback became a reason to make the next attempt more reliable and easier to verify.</p></article>
+<article class="journey-step"><span class="journey-stamp">03 / THE FIRST PROOF</span><h4>THE TOOLCHAIN PASSED.</h4><p>On <strong>25 September 2026</strong>, the recorded M1 reference gate passed: the controlled bootstrap toolchain completed its source and build checks, C/C++ sanity checks and host-contamination audit. It was a real success—but only the beginning.</p></article>
+<article class="journey-step"><span class="journey-stamp">04 / STEP BY STEP</span><h4>FROM PACKAGES TO A BOOTABLE FOUNDATION.</h4><p>On <strong>11 October 2026</strong>, the M1.5 package architecture was integrated. Recorded development-branch gates then covered a minimal root filesystem, a bootable console environment, signed repository foundations and network/firewall checkpoints through M5.4. These milestones are not the same as a finished desktop release.</p></article>
+<article class="journey-step journey-step-future"><span class="journey-stamp">05 / THE NEXT CHAPTER</span><h4>SUCCESS IS BUILT, NOT DECLARED.</h4><p>Graphics, the integrated desktop, broader hardware support, installer and public release still need development and proof. We have earned important milestones through difficulty; the larger success we hope for is a dependable Ziuf OS that genuinely makes life easier to use every day.</p></article>
 </div>
-<p class="story-note reveal">A playful mascot can make a system welcoming. Good engineering must make it trustworthy. We are pursuing both, and we'll separate completed work from future ideas along the way.</p>
+<p class="journey-footer">The journey has taught us a principle worth keeping: <strong>Build → verify → record → improve.</strong> A difficult build is not a wasted build when it makes the next one stronger.</p>
+<div class="journey-links"><a class="button outline" href="https://github.com/haniffzain/ziuf/blob/main/HISTORY.md">› READ THE BUILD HISTORY</a><a class="button outline" href="https://github.com/haniffzain/ziuf/blob/main/ROADMAP.md">› CHECK THE ROADMAP</a></div>
+</div>
+<div class="story-cards">
+<article class="story-card reveal"><span class="story-num">01 / DAILY LIFE</span><h3>MORE TIME FOR WHAT MATTERS.</h3><p>We want sensible defaults, clearer problems and less unnecessary upkeep, so the computer can support everyday work and creativity instead of constantly demanding attention.</p></article>
+<article class="story-card reveal"><span class="story-num">02 / RESPECT FOR PRIVACY</span><h3>YOUR LIFE IS YOUR OWN.</h3><p>No automatic user-activity telemetry and local-first diagnostics are design goals. We will need to implement and validate those safeguards before claiming they work across the finished OS.</p></article>
+<article class="story-card reveal"><span class="story-num">03 / AN INDEPENDENT PATH</span><h3>MORE THAN A FRESH COAT OF PAINT.</h3><p>Ziuf is working on a controlled Linux foundation, package architecture and modular Wayland-first desktop, using proven upstream technology where appropriate.</p></article>
+<article class="story-card reveal"><span class="story-num">04 / HONEST PROGRESS</span><h3>SMALL PROOFS OVER BIG PROMISES.</h3><p>We show completed checkpoints, experimental work and unfinished goals separately. The project is still being built; the journey is real, and its final outcome must still be earned.</p></article>
+</div>
+<p class="story-note reveal">This is not the story of a finished operating system that conquered every obstacle. It is the story of a difficult idea that survived setbacks, found its first technical successes and continues forward—one verified milestone at a time.</p>
 </div>
 </section>
-
 <section class="section principles" id="principles" aria-labelledby="principles-title">
 <div class="shell">
 <div class="principles-kicker">02 / NOT JUST FEATURES. PRINCIPLES.</div>
@@ -155,31 +168,32 @@
 
 <section class="section direction-story" id="difference" aria-labelledby="difference-title">
 <div class="shell">
-<div class="story-kicker">04 / WHY ZIUF, WHEN OTHER OS OPTIONS ALREADY EXIST?</div>
-<h2 id="difference-title">NOT HERE TO WIN A LOGO CONTEST.</h2>
-<p class="direction-lead">Windows, macOS and established Linux distributions serve millions of people and offer mature software ecosystems. We respect that. Ziuf is exploring a different balance: <strong>independence without needless complexity, privacy without constant suspicion, and a desktop with personality without sacrificing engineering discipline.</strong></p>
+<div class="story-kicker">04 / WHY BUILD ANOTHER OPERATING SYSTEM?</div>
+<h2 id="difference-title">NOT A RACE AGAINST ANYONE.</h2>
+<p class="direction-lead">We do not need to call other systems inferior to explain why Ziuf exists. Mature operating systems offer years of work, compatibility and valuable lessons. <strong>Ziuf is an attempt to explore whether computing can become calmer, more understandable and less demanding in everyday life.</strong> That is our purpose—not a leaderboard.</p>
 <div class="direction-grid">
 <article class="direction-panel reveal">
-<h3>WHAT MAKES ZIUF INTERESTING?</h3>
-<p>Instead of asking you to switch because of a slogan, we want to earn your confidence through the choices behind the system:</p>
+<h3>WHAT WE HOPE TO MAKE EASIER</h3>
+<p>Our intended direction is practical: give people more time to use their computer, and less time looking after it.</p>
 <ul>
-<li>A controlled, independently built Linux foundation</li>
-<li>ZPM package architecture and verification work</li>
-<li>A modular, Wayland-first desktop direction</li>
-<li>Local-first privacy, transparent diagnostics and user control</li>
-<li>A thoughtful experience with less routine maintenance</li>
+<li>Less routine maintenance and fewer unnecessary interruptions</li>
+<li>Privacy-conscious defaults and clear permission choices</li>
+<li>Recovery paths and diagnostics ordinary users can understand</li>
+<li>A flexible desktop that makes common tasks feel straightforward</li>
+<li>Respect for user ownership, supported by verifiable engineering</li>
 </ul>
+<p>These are outcomes we want to test and earn—not performance advantages we have already proved.</p>
 </article>
 <article class="direction-panel future reveal">
-<h3>WHY NOT INSTALL IT TODAY?</h3>
-<p>Because the answer should be honest: <strong>Ziuf is not a finished daily-driver OS.</strong> There is no stable public installation release yet.</p>
-<p>Our documented progress includes toolchain, core-system, packaging and security groundwork. Desktop integration, broad hardware support, reliability testing and release engineering still have milestones to pass.</p>
-<p>For everyday use today, a mature OS remains the practical choice. Follow Ziuf if these principles describe the kind of OS you'd like to use in the future.</p>
+<h3>WHERE THE JOURNEY STANDS TODAY</h3>
+<p><strong>We have made progress, but Ziuf is not a finished daily-driver OS.</strong> There is no stable public installation release yet.</p>
+<p>The documented journey includes a verified bootstrap toolchain, integrated package architecture and recorded development-branch gates for core system, boot, repository and firewall work. Desktop integration, broad hardware compatibility and release validation remain ahead.</p>
+<p>For dependable everyday computing today, a mature supported OS remains the sensible choice. Follow Ziuf for the work we are doing—not a promise that we have already reached the destination.</p>
 </article>
 </div>
 <div class="direction-footer">
-<p><strong>Why it deserves a closer look:</strong> not because we claim to be better than every alternative, but because we're making our design decisions and engineering journey visible. When Ziuf is ready, the results—not the marketing—should make the case.</p>
-<a class="button dark" href="https://github.com/haniffzain/ziuf/blob/main/ROADMAP.md">› READ THE ROADMAP</a>
+<p><strong>What would count as success?</strong> Not being declared better than another OS, but showing through real-world testing that Ziuf can help people get through daily tasks with less friction, clear control and trustworthy behaviour.</p>
+<a class="button dark" href="https://github.com/haniffzain/ziuf/blob/main/HISTORY.md">› FOLLOW THE JOURNEY</a>
 </div>
 </div>
 </section>
